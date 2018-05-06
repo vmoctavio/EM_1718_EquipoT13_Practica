@@ -10,7 +10,8 @@ using AppGestionEMS.Models;
 
 namespace AppGestionEMS.Controllers
 {
-    [Authorize(Roles = "tipoUsuario")]
+    [Authorize(Roles = "tipoUsuario1")]
+
     public class CursosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -47,7 +48,7 @@ namespace AppGestionEMS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Actual")] Cursos cursos)
+        public ActionResult Create([Bind(Include = "Id,Cod_Curso,Actual")] Cursos cursos)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace AppGestionEMS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Actual")] Cursos cursos)
+        public ActionResult Edit([Bind(Include = "Id,Cod_Curso,Actual")] Cursos cursos)
         {
             if (ModelState.IsValid)
             {

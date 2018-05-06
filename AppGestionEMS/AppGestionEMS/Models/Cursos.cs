@@ -8,6 +8,7 @@ namespace AppGestionEMS.Models
     public class Cursos
     {
         public int Id { get; set; }
+        public int Cod_Curso { get; set; }
         public byte Actual { get; set; }
 
     }
