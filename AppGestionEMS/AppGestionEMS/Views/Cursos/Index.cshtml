@@ -1,0 +1,81 @@
+﻿@model IEnumerable<AppGestionEMS.Models.Cursos>
+
+@{
+    ViewBag.Title = "Gestión de cursos";
+}
+<div class="container container-fluid">
+
+    <h2>Gestión de cursos</h2>
+
+    <p>
+        <span>
+            <a href="@Url.Action("Create")" class="btn btn-primary">
+                <span class="fa fa-plus-square-o fa-lg"></span>
+                Nuevo curso
+            </a>
+        </span>
+    </p>
+    <table id="etsisitravel" class="table table-striped table-hover table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="bg-primary">
+                    @Html.DisplayNameFor(model => model.Cod_Curso)
+                </th>
+                <th class="bg-primary">
+                    @Html.DisplayNameFor(model => model.Actual)
+                </th>
+                <th class="bg-primary"></th>
+            </tr>
+        </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cod_Curso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Actual)
+                    </td>
+                    <td>
+                        <span>
+                            <a href="@Url.Action("Editar", "Cursos", new { id = item.Id })" class="btn btn-success">
+                                <span class="fa fa-pencil-square-o fa-lg"></span>
+                                Edit
+                            </a>
+                        </span>
+                        <span>
+                            <a href="@Url.Action("Detalles", "Cursos", new { id = item.Id })" class="btn btn-primary">
+                                <span class="fa fa-eye fa-lg"></span>
+                                Details
+                            </a>
+                        </span>
+                        <span>
+                            <a href="@Url.Action("Eliminar", "Cursos", new { id = item.Id })" class="btn btn-danger">
+                                <span class="fa fa-trash-o fa-lg"></span>
+                                Delete
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            }
+
+</table>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+            $('#etsisitravel').dataTable({
+                "columnDefs": [
+                  { "width": "33%", "targets": "_all" },
+                  { "className": "text-center", "targets": "_all" }
+
+                ]
+            });
+
+
+
+    </script>
+    }

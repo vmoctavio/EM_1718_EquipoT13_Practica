@@ -1,0 +1,61 @@
+.contact-and-map .section-title{
+	font-weight: 400;
+	text-align: left;
+	margin-bottom: 40px;
+}
+#googleMap{
+	width: 100%;
+	height: 414px;
+}
+.message{
+	height: 200px;
+}
+.form .input-group{
+	margin-bottom: 15px;
+}
+.contacts{
+	background: #fff;
+	text-align: center;
+}
+.contact{
+	padding: 20px 0;
+	background: #317eac;
+        color: #fff;
+	transition: all .4s ease-in-out;
+        border: 1px solid #317eac;
+
+}
+.contact:hover{
+	background: #fff;
+}
+.contact:hover .contact-icon, .contact:hover .contact-name, .contact:hover .contact-detail{
+	color: #317eac;
+}
+.contact-icon{
+	color: #fff;
+	font-size: 40px;
+}
+.contact-icon:hover{
+	color: #317eac;
+	font-size: 40px;
+}
+.contact-name{
+	color: #fff;
+	font-size: 15px;
+        font-weight: bold;
+	margin: 20px auto;
+}
+.contact-name:hover{
+	color: #317eac;
+}
+.contact-detail a {
+	color: #fff;
+	line-height: 100%;
+	font-size: 13px;
+}
+.contact:hover .contact-detail a {
+	color: #317eac;
+}
+.contact-detail:hover a {
+	color: #317eac;
+}
