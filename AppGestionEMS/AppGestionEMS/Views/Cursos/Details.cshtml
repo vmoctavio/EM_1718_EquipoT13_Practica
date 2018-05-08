@@ -1,34 +1,45 @@
 ﻿@model AppGestionEMS.Models.Cursos
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles curso";
 }
 
-<h2>Details</h2>
+<div class="container container-fluid">
 
-<div>
-    <h4>Cursos</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cod_Curso)
-        </dt>
+    <h2>Detalles curso</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cod_Curso)
-        </dd>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Cod_Curso)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Actual)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Cod_Curso)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Actual)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Actual)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Actual)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <span>
+            <a href="@Url.Action("Edit", "Cursos", new { id = Model.Id })" class="btn btn-success">
+                <span class="fa fa-pencil-square-o fa-lg"></span>
+                Editar
+            </a>
+        </span>
+        <span>
+            <a href="@Url.Action("Index", "Cursos" )" class="btn btn-primary">
+                <span class="fa fa-undo fa-lg"></span>
+                Volver a la lista
+            </a>
+        </span>
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

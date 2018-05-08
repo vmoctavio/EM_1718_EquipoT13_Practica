@@ -39,21 +39,21 @@
                     </td>
                     <td>
                         <span>
-                            <a href="@Url.Action("Editar", "Cursos", new { id = item.Id })" class="btn btn-success">
+                            <a href="@Url.Action("Edit", "Cursos", new { id = item.Id })" class="btn btn-success">
                                 <span class="fa fa-pencil-square-o fa-lg"></span>
-                                Edit
+                                Editar
                             </a>
                         </span>
                         <span>
-                            <a href="@Url.Action("Detalles", "Cursos", new { id = item.Id })" class="btn btn-primary">
+                            <a href="@Url.Action("Details", "Cursos", new { id = item.Id })" class="btn btn-primary">
                                 <span class="fa fa-eye fa-lg"></span>
-                                Details
+                                Detalles
                             </a>
                         </span>
                         <span>
-                            <a href="@Url.Action("Eliminar", "Cursos", new { id = item.Id })" class="btn btn-danger">
+                            <a href="@Url.Action("Delete", "Cursos", new { id = item.Id })" class="btn btn-danger">
                                 <span class="fa fa-trash-o fa-lg"></span>
-                                Delete
+                                Eliminar
                             </a>
                         </span>
                     </td>
@@ -71,11 +71,10 @@
                 "columnDefs": [
                   { "width": "33%", "targets": "_all" },
                   { "className": "text-center", "targets": "_all" }
-
-                ]
+                ],
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+                }
             });
-
-
-
     </script>
     }

@@ -31,7 +31,8 @@ namespace AppGestionEMS
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-etsisi.css",
-                      "~/Content/dataTables.bootstrap.css",
+                      "~/Content/jquery.dataTables.min.css",
+                      "~/fonts/font-awesome/font-awesome.css",
                       "~/Content/styles.css",
                       "~/Content/site.css",
                       "~/Content/owl.carousel.css",
