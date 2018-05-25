@@ -43,7 +43,10 @@ namespace AppGestionEMS.Controllers
         {
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso");
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo");
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name");
+            ViewBag.UserId = new SelectList(db.Users.OrderBy(e => e.NameSurname), "Id", "NameSurname");
+
+
+
             return View();
         }
 
@@ -63,7 +66,7 @@ namespace AppGestionEMS.Controllers
 
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso", asignacionDocentes.CursoId);
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo", asignacionDocentes.GrupoClasesId);
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", asignacionDocentes.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "NameSurname", asignacionDocentes.UserId);
             return View(asignacionDocentes);
         }
 
@@ -81,7 +84,8 @@ namespace AppGestionEMS.Controllers
             }
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso", asignacionDocentes.CursoId);
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo", asignacionDocentes.GrupoClasesId);
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", asignacionDocentes.UserId);
+            ViewBag.UserId = new SelectList(db.Users.OrderBy(e => e.NameSurname), "Id", "NameSurname", asignacionDocentes.UserId);
+
             return View(asignacionDocentes);
         }
 
@@ -100,7 +104,7 @@ namespace AppGestionEMS.Controllers
             }
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso", asignacionDocentes.CursoId);
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo", asignacionDocentes.GrupoClasesId);
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", asignacionDocentes.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "NameSurname", asignacionDocentes.UserId);
             return View(asignacionDocentes);
         }
 

@@ -11,6 +11,8 @@ namespace AppGestionEMS.Models
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string NameSurname { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -39,6 +41,8 @@ namespace AppGestionEMS.Models
         public System.Data.Entity.DbSet<AppGestionEMS.Models.AsignacionDocentes> AsignacionDocentes { get; set; }
 
         public System.Data.Entity.DbSet<AppGestionEMS.Models.Matriculas> Matriculas { get; set; }
+
+        public System.Data.Entity.DbSet<AppGestionEMS.Models.Evaluaciones> Evaluaciones { get; set; }
 
     }
 }

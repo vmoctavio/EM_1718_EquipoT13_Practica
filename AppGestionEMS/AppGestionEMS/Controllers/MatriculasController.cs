@@ -9,9 +9,10 @@ using System.Web.Mvc;
 using AppGestionEMS.Models;
 using Microsoft.AspNet.Identity;
 
+
 namespace AppGestionEMS.Controllers
 {
-    [Authorize(Roles = "tipoUsuario1")]
+    [Authorize(Roles = "tipoUsuario2")]
 
     public class MatriculasController : Controller
     {
@@ -22,10 +23,9 @@ namespace AppGestionEMS.Controllers
         {
             int grupo = getGrupoClase();
 
-            var matriculas = db.Matriculas.Include(m => m.Curso).Include(m => m.GrupoClases).Include(m => m.User).Where(p => p.GrupoClasesId ==
-            grupo).ToList();
-            return View(matriculas.ToList());
+            var matriculas = db.Matriculas.Include(m => m.Curso).Include(m => m.GrupoClases).Include(m => m.User).Where(p => p.GrupoClases.Id == grupo).ToList();
 
+            return View(matriculas.ToList());
         }
 
         // GET: Matriculas/Details/5
@@ -48,7 +48,8 @@ namespace AppGestionEMS.Controllers
         {
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso");
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo");
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name");
+            ViewBag.UserId = new SelectList(db.Users.OrderBy(e => e.NameSurname), "Id", "NameSurname");
+
             return View();
         }
 
@@ -68,7 +69,7 @@ namespace AppGestionEMS.Controllers
 
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso", matriculas.CursoId);
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo", matriculas.GrupoClasesId);
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", matriculas.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "NameSurname", matriculas.UserId);
             return View(matriculas);
         }
 
@@ -86,7 +87,8 @@ namespace AppGestionEMS.Controllers
             }
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso", matriculas.CursoId);
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo", matriculas.GrupoClasesId);
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", matriculas.UserId);
+            ViewBag.UserId = new SelectList(db.Users.OrderBy(e => e.NameSurname), "Id", "NameSurname", matriculas.UserId);
+
             return View(matriculas);
         }
 
@@ -105,7 +107,7 @@ namespace AppGestionEMS.Controllers
             }
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Cod_Curso", matriculas.CursoId);
             ViewBag.GrupoClasesId = new SelectList(db.GrupoClases, "Id", "Cod_Grupo", matriculas.GrupoClasesId);
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Name", matriculas.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "NameSurname", matriculas.UserId);
             return View(matriculas);
         }
 
@@ -152,6 +154,5 @@ namespace AppGestionEMS.Controllers
                 return -1;
             else return grupos.First().GrupoClases.Id;
         }
-
     }
 }

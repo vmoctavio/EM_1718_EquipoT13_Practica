@@ -170,10 +170,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AsignacionDocentesController.cs" />
     <Compile Include="Controllers\CursosController.cs" />
+    <Compile Include="Controllers\EvaluacionesController.cs" />
     <Compile Include="Controllers\GrupoClasesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MatriculasController.cs" />
+    <Compile Include="Controllers\MisEvaluacionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,14 +219,31 @@
     <Compile Include="Migrations\201805172108308_AsignacionDocente2.Designer.cs">
       <DependentUpon>201805172108308_AsignacionDocente2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805172138138_Matriculas.cs" />
-    <Compile Include="Migrations\201805172138138_Matriculas.Designer.cs">
-      <DependentUpon>201805172138138_Matriculas.cs</DependentUpon>
+    <Compile Include="Migrations\201805181948418_Matriculas.cs" />
+    <Compile Include="Migrations\201805181948418_Matriculas.Designer.cs">
+      <DependentUpon>201805181948418_Matriculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805182144053_Init.cs" />
+    <Compile Include="Migrations\201805182144053_Init.Designer.cs">
+      <DependentUpon>201805182144053_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805182202487_Init1.cs" />
+    <Compile Include="Migrations\201805182202487_Init1.Designer.cs">
+      <DependentUpon>201805182202487_Init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201135460_CreateEvaluaciones.cs" />
+    <Compile Include="Migrations\201805201135460_CreateEvaluaciones.Designer.cs">
+      <DependentUpon>201805201135460_CreateEvaluaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805201248417_CambiosUser.cs" />
+    <Compile Include="Migrations\201805201248417_CambiosUser.Designer.cs">
+      <DependentUpon>201805201248417_CambiosUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AsignacionDocentes.cs" />
     <Compile Include="Models\Cursos.cs" />
+    <Compile Include="Models\Evaluaciones.cs" />
     <Compile Include="Models\GrupoClases.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -241,13 +260,20 @@
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\fonts\flexslider-icon.svg" />
     <Content Include="Content\fonts\untitled-font-1.svg" />
+    <Content Include="Content\images\evaluaciones.jpg" />
     <Content Include="Content\images\foto_davidm.jpg" />
     <Content Include="Content\images\foto_vop.jpg" />
     <Content Include="Content\images\foto_yuste.jpg" />
     <Content Include="Content\images\logoetsisi.png" />
+    <Content Include="Content\images\misevaluaciones.jpg" />
     <Content Include="Content\images\slider\contact.jpg" />
     <Content Include="Content\images\slider\team.jpg" />
     <Content Include="Content\images\slider\uno.jpg" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
     <Content Include="Content\jquery.dataTables.min.css" />
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\owl.theme.css" />
@@ -344,6 +370,16 @@
     <Content Include="Views\Matriculas\Details.cshtml" />
     <Content Include="Views\Matriculas\Edit.cshtml" />
     <Content Include="Views\Matriculas\Index.cshtml" />
+    <Content Include="Views\Evaluaciones\Create.cshtml" />
+    <Content Include="Views\Evaluaciones\Delete.cshtml" />
+    <Content Include="Views\Evaluaciones\Details.cshtml" />
+    <Content Include="Views\Evaluaciones\Edit.cshtml" />
+    <Content Include="Views\Evaluaciones\Index.cshtml" />
+    <Content Include="Views\MisEvaluaciones\Create.cshtml" />
+    <Content Include="Views\MisEvaluaciones\Delete.cshtml" />
+    <Content Include="Views\MisEvaluaciones\Details.cshtml" />
+    <Content Include="Views\MisEvaluaciones\Edit.cshtml" />
+    <Content Include="Views\MisEvaluaciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -387,8 +423,20 @@
     <EmbeddedResource Include="Migrations\201805172108308_AsignacionDocente2.resx">
       <DependentUpon>201805172108308_AsignacionDocente2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805172138138_Matriculas.resx">
-      <DependentUpon>201805172138138_Matriculas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805181948418_Matriculas.resx">
+      <DependentUpon>201805181948418_Matriculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805182144053_Init.resx">
+      <DependentUpon>201805182144053_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805182202487_Init1.resx">
+      <DependentUpon>201805182202487_Init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201135460_CreateEvaluaciones.resx">
+      <DependentUpon>201805201135460_CreateEvaluaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805201248417_CambiosUser.resx">
+      <DependentUpon>201805201248417_CambiosUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,16 +3,14 @@ namespace AppGestionEMS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TipoUsuario : DbMigration
+    public partial class Init1 : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Cursos", "Cod_Curso", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Cursos", "Cod_Curso");
         }
     }
 }
