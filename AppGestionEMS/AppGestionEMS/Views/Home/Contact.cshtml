@@ -1,17 +1,81 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contacto";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div id="header">
+    <div class="flexslider">
+        <ul class="slides">
+            <li class="slider-item" style="background-image: url('/Content/images/slider/contact.jpg')">
+                <div class="intro container">
+                    <div class="container-overlay">
+                        <h1>ETSISI EM-Agency</h1>
+                        <h2>Nuestro equipo</h2>
+                        <h3>¿Tienes alguna pregunta o comentario? Envíanos un mensaje</h3>
+                        <h3>No compartiremos su correo electrónico ni revelaremos su identidad secreta</h3>
+                    </div>
+                </div>
+            </li> <!-- /.slider-item -->
+        </ul> <!-- /.slides -->
+    </div> <!-- /.flexslider -->
+</div> <!-- /#header -->
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<hr />
+
+<section class="contacts section-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="contact">
+                    <div class="contact-icon">
+                        <i class="ion-android-map"></i>
+                    </div>
+                    <div class="contact-name">
+                        Dirección
+                    </div>
+                    <div class="contact-detail">
+                        Calle Alan Turing s/n  <br>
+                        (Carretera de Valencia Km 7) <br>
+                        28031 Madrid <br>
+                        España
+                    </div>
+                </div> <!-- /.contact -->
+            </div>
+            <div class="col-sm-4">
+                <div class="contact">
+                    <div class="contact-icon">
+                        <i class="ion-ios-telephone"></i>
+                    </div>
+                    <div class="contact-name">
+                        Teléfono
+                    </div>
+                    <div class="contact-detail">
+                        Secretaría: 91 067 35 24<br>
+                        Teléfono Conserjería: 91 067 35 34
+                        <br><br><br>
+                    </div>
+                </div> <!-- /.contact -->
+            </div>
+            <div class="col-sm-4">
+                <div class="contact">
+                    <div class="contact-icon">
+                        <i class="ion-email"></i>
+                    </div>
+                    <div class="contact-name">
+                        Correo electrónico
+                    </div>
+                    <div class="contact-detail">
+                        <br>
+                        Secretaría:   <a href="mailto:negociado.alumnos@etsisi.upm.es">negociado.alumnos@etsisi.upm.es</a><br><br>
+                        <br>
+                    </div>
+                </div> <!-- /.contact -->
+
+
+
+            </div>
+
+        </div>     <!-- /div del row -->
+    </div>
+
+</section>
+

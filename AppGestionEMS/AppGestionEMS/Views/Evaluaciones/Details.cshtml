@@ -1,82 +1,92 @@
 ﻿@model AppGestionEMS.Models.Evaluaciones
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles evaluación";
 }
+<div class="container container-fluid">
 
-<h2>Details</h2>
+    <h2>Detalles evaluación</h2>
 
-<div>
-    <h4>Evaluaciones</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Curso.Cod_Curso)
-        </dt>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Curso.Cod_Curso)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Curso.Cod_Curso)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Curso.Cod_Curso)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.User.NameSurname)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.User.NameSurname)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Convocatoria)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Convocatoria)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Convocatoria)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Convocatoria)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Trabajo1)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Trabajo1)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Trabajo1)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Trabajo1)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Trabajo2)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Trabajo2)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Trabajo2)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Trabajo2)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Trabajo3)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Trabajo3)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Trabajo3)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Trabajo3)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Test)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Test)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Test)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Test)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Practica)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Practica)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Practica)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Practica)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        <span>
+            <a href="@Url.Action("Edit", "Evaluaciones", new { id = Model.Id })" class="btn btn-success">
+                <span class="fa fa-pencil-square-o fa-lg"></span>
+                Editar
+            </a>
+        </span>
+        <span>
+            <a href="@Url.Action("Index", "Evaluaciones" )" class="btn btn-primary">
+                <span class="fa fa-undo fa-lg"></span>
+                Volver a la lista
+            </a>
+        </span>
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

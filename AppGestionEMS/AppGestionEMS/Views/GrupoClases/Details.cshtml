@@ -1,26 +1,36 @@
 ﻿@model AppGestionEMS.Models.GrupoClases
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles grupo de clase";
 }
+<div class="container container-fluid">
 
-<h2>Details</h2>
+    <h2>Detalles grupo de clase</h2>
 
-<div>
-    <h4>GrupoClases</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cod_Grupo)
-        </dt>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Cod_Grupo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cod_Grupo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Cod_Grupo)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        <span>
+            <a href="@Url.Action("Edit", "GrupoClases", new { id = Model.Id })" class="btn btn-success">
+                <span class="fa fa-pencil-square-o fa-lg"></span>
+                Editar
+            </a>
+        </span>
+        <span>
+            <a href="@Url.Action("Index", "GrupoClases" )" class="btn btn-primary">
+                <span class="fa fa-undo fa-lg"></span>
+                Volver a la lista
+            </a>
+        </span>
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

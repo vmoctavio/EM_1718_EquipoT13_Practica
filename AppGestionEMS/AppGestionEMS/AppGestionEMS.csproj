@@ -250,6 +250,11 @@
     <Compile Include="Models\Matriculas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Traducciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Traducciones.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-etsisi.css" />
@@ -260,13 +265,17 @@
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\fonts\flexslider-icon.svg" />
     <Content Include="Content\fonts\untitled-font-1.svg" />
+    <Content Include="Content\images\docentes.jpg" />
     <Content Include="Content\images\evaluaciones.jpg" />
     <Content Include="Content\images\foto_davidm.jpg" />
+    <Content Include="Content\images\foto_dvl.jpg" />
     <Content Include="Content\images\foto_vop.jpg" />
     <Content Include="Content\images\foto_yuste.jpg" />
     <Content Include="Content\images\logoetsisi.png" />
+    <Content Include="Content\images\matriculas.jpg" />
     <Content Include="Content\images\misevaluaciones.jpg" />
     <Content Include="Content\images\slider\contact.jpg" />
+    <Content Include="Content\images\slider\dos.jpg" />
     <Content Include="Content\images\slider\team.jpg" />
     <Content Include="Content\images\slider\uno.jpg" />
     <Content Include="Content\images\sort_asc.png" />
@@ -437,6 +446,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805201248417_CambiosUser.resx">
       <DependentUpon>201805201248417_CambiosUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traducciones.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Traducciones.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

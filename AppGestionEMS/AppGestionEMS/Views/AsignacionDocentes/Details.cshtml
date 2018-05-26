@@ -1,42 +1,52 @@
 ﻿@model AppGestionEMS.Models.AsignacionDocentes
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles asignación docente";
 }
+<div class="container container-fluid">
 
-<h2>Details</h2>
+    <h2>Detalles asignación docente</h2>
 
-<div>
-    <h4>AsignacionDocentes</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Curso.Cod_Curso)
-        </dt>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Curso.Cod_Curso)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Curso.Cod_Curso)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Curso.Cod_Curso)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GrupoClases.Cod_Grupo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.GrupoClases.Cod_Grupo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.GrupoClases.Cod_Grupo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.GrupoClases.Cod_Grupo)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.User.NameSurname)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.User.NameSurname)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        <span>
+            <a href="@Url.Action("Edit", "AsignacionDocentes", new { id = Model.Id })" class="btn btn-success">
+                <span class="fa fa-pencil-square-o fa-lg"></span>
+                Editar
+            </a>
+        </span>
+        <span>
+            <a href="@Url.Action("Index", "AsignacionDocentes" )" class="btn btn-primary">
+                <span class="fa fa-undo fa-lg"></span>
+                Volver a la lista
+            </a>
+        </span>
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

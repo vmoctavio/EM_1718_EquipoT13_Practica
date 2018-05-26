@@ -1,48 +1,59 @@
 ﻿@model AppGestionEMS.Models.Matriculas
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Borrar matrícula";
 }
+<div class="container container-fluid">
 
-<h2>Delete</h2>
+    <h2>Borrar matrícula</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Matriculas</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Curso.Cod_Curso)
-        </dt>
+    <h3>¿Estás seguro que quieres borrar esta información?</h3>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Curso.Cod_Curso)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Curso.Cod_Curso)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Curso.Cod_Curso)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GrupoClases.Cod_Grupo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.GrupoClases.Cod_Grupo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.GrupoClases.Cod_Grupo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.GrupoClases.Cod_Grupo)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.User.NameSurname)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.User.NameSurname)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+
+            <div class="form-actions no-color">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fa fa-trash-o fa-lg"></i> Borrar
+                </button>
+                <span>
+                    <a href="@Url.Action("Index", "Matriculas" )" class="btn btn-primary">
+                        <span class="fa fa-undo fa-lg"></span>
+                        Volver a la lista
+                    </a>
+                </span>
+
+            </div>
+
+        }
+    </div>
 </div>
